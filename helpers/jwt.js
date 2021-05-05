@@ -6,7 +6,7 @@ function authJwt() {
     return expressJwt({
         secret,
         algorithms: ['HS256'],
-        isRevoked: isRevoked
+        isRevoked: isRevoked,
     }).unless({
         // excluding API routes that doesnt need authentication
         path: [
