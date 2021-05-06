@@ -10,6 +10,7 @@ const categoryRouter = require('./routers/categories');
 const userRouter = require('./routers/users');
 const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
+const ordersRouter = require('./routers/orders')
 
 app.use(cors());
 app.options('*', cors());
@@ -24,6 +25,7 @@ app.use(errorHandler);
 app.use(`${api}/products`, productsRouter);
 app.use(`${api}/categories`, categoryRouter);
 app.use(`${api}/users`, userRouter);
+app.use(`${api}/orders`, ordersRouter);
 
 
 mongoose.connect(process.env.CONNECTION_STRING, {
